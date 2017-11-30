@@ -375,3 +375,56 @@ Sessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2017-11-24T20:20:45.193Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2017-11-24T20:25:45.194Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2017-11-24T20:30:45.193Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T15:40:06.916Z] GhostDriver - Main - running on port 32599
+[INFO  - 2017-11-27T15:40:08.506Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-11-27T15:40:08.506Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.customHeaders:  - {}
+[INFO  - 2017-11-27T15:40:08.507Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-8.1-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-11-27T15:40:08.508Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3f58e460-d389-11e7-ac7e-d34a7b8cc3f9
+[ERROR - 2017-11-27T15:40:14.953Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - msg: +++DBDM-ERROR > getAnonymousID > Ajax call error. (Execution time: 5208ms): timeout
+[ERROR - 2017-11-27T15:40:14.954Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - stack:
+  log (http://tags.tiqcdn.com/utag/ibm/web/prod/utag.js:56)
+[ERROR - 2017-11-27T15:40:16.957Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - msg: TypeError: null is not an object (evaluating 'clearbitData.hasOwnProperty')
+[ERROR - 2017-11-27T15:40:16.960Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - stack:
+  setClearbitData (http://tags.tiqcdn.com/utag/ibm/web/prod/utag.js:280)
+  clearbitCallback (http://tags.tiqcdn.com/utag/ibm/web/prod/utag.js:403)
+[ERROR - 2017-11-27T15:40:17.776Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - msg: v18: The 'digitalData' object's 'version' value is incorrect (digitalData.page.pageInfo.version). It needs to be "v18"
+[ERROR - 2017-11-27T15:40:17.776Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - stack:
+  a (https://1.www.s81c.com/common/v18/js/www.js:44)
+[ERROR - 2017-11-27T15:40:21.554Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - msg: TypeError: null is not an object (evaluating 'clearbitData.hasOwnProperty')
+[ERROR - 2017-11-27T15:40:21.554Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - stack:
+  setClearbitData (http://tags.tiqcdn.com/utag/ibm/web/prod/utag.js:280)
+  clearbitCallback (http://tags.tiqcdn.com/utag/ibm/web/prod/utag.js:403)
+[ERROR - 2017-11-27T15:40:22.223Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - msg: TypeError: undefined is not an object (evaluating 'a.common.meta.page.pageInfo')
+[ERROR - 2017-11-27T15:40:22.224Z] Session [3f58e460-d389-11e7-ac7e-d34a7b8cc3f9] - page.onError - stack:
+  h (https://1.www.s81c.com/common/v18/js/www.js:32)
+[INFO  - 2017-11-27T15:45:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T15:50:06.906Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T15:55:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:00:06.906Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:05:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:10:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:15:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:20:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:25:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:30:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:35:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:40:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:45:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:50:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T16:55:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:00:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:05:06.907Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:10:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:15:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:20:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:25:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:30:06.908Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:35:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:40:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:45:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:50:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T17:55:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T18:00:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T18:05:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T18:10:06.910Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-27T18:15:06.909Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW

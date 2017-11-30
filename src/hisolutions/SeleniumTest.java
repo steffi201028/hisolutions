@@ -29,11 +29,11 @@ public class SeleniumTest {
 			
 			
 			//$(class:'main-menu-item-text', text:"Templates").click();
-		    //WebDriver driver = new ChromeDriver();
+		    WebDriver driver = new ChromeDriver();
 			DesiredCapabilities  caps = new DesiredCapabilities();
 			caps.setJavascriptEnabled(true);
 			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "C:/xampp/htdocs/hisolutions/phantomjs-2.1.1-windows/bin/phantomjs.exe");
-			WebDriver driver = new PhantomJSDriver(caps);
+			//WebDriver driver = new PhantomJSDriver(caps);
 			driver.get("http://www-03.ibm.com/software/sla/sladb.nsf/3f1f7af09a76f13f8525702d005422d8/0007278864ef7bd885257e18006862c9?OpenDocument");
 			
 				

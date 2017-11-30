@@ -37,24 +37,19 @@ import org.jsoup.select.Elements;
 
 import com.google.common.base.CharMatcher;
 
-public class Main3 {
+public class Main4 {
 
 	private static Document site;
-	static String command;
-	static String command2;
-	static String command3;
+
 	//private static Document doc;
 
 
 	public static void main(String[] args) throws IndexOutOfBoundsException, SQLException {
 		//Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
-		String text;
-		
+	
 
 		Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
-		Statement myStmt0 = myConn.createStatement();
-		String mdb0="TRUNCATE TABLE ibmproducts";
-		myStmt0.executeUpdate(mdb0);
+
 
 		try {
 
@@ -64,7 +59,7 @@ public class Main3 {
 			for(i=80000;i<80900;i+=29) {
 				String url = new String("http://www-03.ibm.com/software/sla/sladb.nsf/lilookup?OpenView&Start=" + i);
 
-
+                String text = new String();
 				site=Jsoup.connect(url).get();
 				Elements tags= site.select("a");
 				for(int j = 0; j <tags.size(); j++) {
@@ -89,41 +84,32 @@ public class Main3 {
 						PrintStream out = new PrintStream(new FileOutputStream("test.html"));
 						Path path = Paths.get("test.html");
 						Document doc=Jsoup.connect(urldoc).get();
-                        //Test section
-						
-						//Document doc=Jsoup.connect("http://www-03.ibm.com/software/sla/sladb.nsf/lilookup/64234087974435F685257D9100095A4E?OpenDocument").get();
-						
-						//Test section end
-						Elements spanTags = doc.getElementsByTag("p");	
 
+						Elements spanTags = doc.getElementsByTag("p");	
+                        StringBuffer text1= new StringBuffer();
 						for (Element p : spanTags) {
 							text = p.outerHtml();
 							out.println(text);
+							text1.append(text);
+							
 
 						}
+						System.out.println("Original text1: " + text1);
 						StringBuffer htmlStr = getStringFromFile("test.html", "ISO-8859-1");
 						boolean isPresent = htmlStr.indexOf("The following are Supporting Programs licensed with the Program") != -1;
-						boolean isPresent1 = htmlStr.indexOf("Program Name (Program Number):") != -1;
-						//System.out.println(urldoc);
+						System.out.println(urldoc);
 						System.out.println("URL: http://www-03.ibm.com/software/sla/sladb.nsf/lilookup/"+urlsub+"?OpenDocument");
 						//System.out.println(urlsub);
 						System.out.println("Contains String The following are Supporting Programs licensed with the Program ? : " + isPresent);
-						System.out.println("Program Name (Program Number): ? : " + isPresent1);
 						System.out.println();
 						if(isPresent) {
-							if(!isPresent1)
-							{
-							command = "C:\\cygwin\\bin\\sed -n '/The following are Supporting Programs licensed with the Program:/,/^\\s*$/{/The following are Supporting Programs licensed with the Program:/b;/^\\s*$/b;p}' test.html";
+
+							String command = "C:\\cygwin\\bin\\sed -n '/The following are Supporting Programs licensed with the Program:/,/^\\s*$/{/The following are Supporting Programs licensed with the Program:/b;/^\\s*$/b;p}' text";
 							//String command2 = "C:\\cygwin\\bin\\grep   'Program Name' test.html";
-							command2 = "C:\\cygwin\\bin\\sed -n -e 's/^.*Program Name: //p' test.html";
-							command3 = "C:\\cygwin\\bin\\sed -n -e 's/^.*Program Number: //p' test.html"; //outputs Program number
-							//String command3 = "C:\\cygwin\\bin\\grep -o '[0-9]\\{4\\}-[A-Z0-9]\\{3\\}' test.html";   
-							System.out.println("no");
-							System.out.println(command);
-							}
-							else {
-								System.out.println("yes");
-							}
+							String command2 = "C:\\cygwin\\bin\\sed -n -e 's/^.*Program Name: //p' test.html";
+							String command3 = "C:\\cygwin\\bin\\sed -n -e 's/^.*Program Number: //p' test.html"; //outputs Program number
+							//String command3 = "C:\\cygwin\\bin\\grep -o '[0-9]\\{4\\}-[A-Z0-9]\\{3\\}' test.html";                                
+
 							//Release date of document
 							Element meta = doc.select("meta[name=dcterms.date]").first();
 							String content1 = meta.attr("content");
@@ -141,9 +127,13 @@ public class Main3 {
 							//Path path = Paths.get("test.html");
 							Charset charset = StandardCharsets.UTF_8;
 
-							String content = new String(Files.readAllBytes(path), charset);
-							content = content.replaceAll("<br>", "\r\n");
-							Files.write(path, content.getBytes(charset));
+//							String content = new String(Files.readAllBytes(path), charset);
+//							content = content.replaceAll("<br>", "\r\n");
+//							Files.write(path, content.getBytes(charset));
+							//System.out.println("Before command: "+ text1);
+							String text2 =text1.toString().replaceAll("<br>", "\r\n");
+							System.out.println("After command:" +text2);
+							
 
 
 							Process process2 = Runtime.getRuntime().exec(command2);
@@ -172,7 +162,7 @@ public class Main3 {
 								Statement myStmt = myConn.createStatement();
 								//Execute query
 								try {
-									String mdb = "INSERT INTO ibmproducts (hauptprodukt, product_number, bundles,last_modified,link_to_document) VALUES ('"+line2+"','"+line3+"',NULL,'"+content1+"','"+urldoc+"') on duplicate key update `hauptprodukt` = '"+line2+"'";
+									String mdb = "INSERT INTO ibmproducts (hauptprodukt, product_number, bundles,last_modified,link_to_document) VALUES ('"+line2+"','"+line3+"',NULL,'"+content1+"','"+urldoc+"')";
 									//String mdb2 = "INSERT INTO ibmproducts (bundles) VALUES ('"+line+"')WHERE hauptprodukt='NewProduct'";
 
 									myStmt.executeUpdate(mdb);
